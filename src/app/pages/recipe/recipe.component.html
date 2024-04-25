@@ -3,6 +3,8 @@
   {
     <div>
       <h1>{{recipe$.meals[0].strMeal}}</h1>
+      <p>Category : {{recipe$.meals[0].strCategory}}</p>
+      <p>Area : {{recipe$.meals[0].strArea}}</p>
       <img ngSrc="{{recipe$.meals[0].strMealThumb}}" width="400" height="400" priority />
     </div>
     {{recipe$.meals[0].strYoutube}}
