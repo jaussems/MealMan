@@ -4,12 +4,14 @@ import {DataService} from "../../shared/services/data.service";
 import { Meal, } from "../../shared/interfaces/api";
 import {NgOptimizedImage} from "@angular/common";
 import {DomSanitizer} from "@angular/platform-browser";
+import {SafeurlPipe} from "../../shared/pipes/safeurl.pipe";
 
 @Component({
   selector: 'app-recipe',
   standalone: true,
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    SafeurlPipe
   ],
   templateUrl: './recipe.component.html',
   styleUrl: './recipe.component.scss'
@@ -32,7 +34,10 @@ export class RecipeComponent implements  OnInit{
     })
   }
 
-  setIFrameLink(youtubeURL: string) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(youtubeURL);
+  createEmbedLink(url: string) {
+    const urlTest  = new URL(url);
+    const decodedURI = urlTest.search = decodeURIComponent(urlTest.search);
+    const id = decodedURI.replace('?v=', '');
+    return `https://www.youtube.com/embed/${id}`;
   }
 }
