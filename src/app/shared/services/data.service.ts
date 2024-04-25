@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Ingredient, Meal} from "../interfaces/api";
+import {Ingredient, IRecipeByID, Meal} from "../interfaces/api";
 import {Observable} from "rxjs";
 
 @Injectable({
@@ -16,6 +16,10 @@ export class DataService {
 
   getMealsPerMainIngredient(ingredient: string):Observable<Meal> {
     return this.http.get<Meal>(`${this.apiUrl}filter.php?i=${ingredient}`);
+  }
+
+  getRecipeById(mealId: string) {
+    return this.http.get<Meal>(`${this.apiUrl}lookup.php?i=${mealId}`)
   }
 
 
