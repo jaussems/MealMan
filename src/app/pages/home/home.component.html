@@ -5,4 +5,10 @@
     <label>Input your ingredient</label>
   <input formControlName="search"  />
   </form>
+  @for(meal of meals$?.meals; track meal.idMeal)
+  {
+    <div (click)="navigateToRecipePage(meal.idMeal)">
+      <p>{{meal.strMeal}}</p>
+    </div>
+  }
 </div>
