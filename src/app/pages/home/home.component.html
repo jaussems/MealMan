@@ -1,14 +1,16 @@
 <div class="home">
 <h1>Welcome to mealMan</h1>
   <p>Generate meals based on ingredient:</p>
-  <form [formGroup]="searchFormGroup" >
+  <form class="home__form" [formGroup]="searchFormGroup" >
     <label>Input your ingredient</label>
-  <input formControlName="search"  />
+  <input class="home__form__input" formControlName="search"  />
   </form>
+  <div class="home__meals">
   @for(meal of meals$?.meals; track meal.idMeal)
   {
-    <div (click)="navigateToRecipePage(meal.idMeal)">
+    <div class="meal" (click)="navigateToRecipePage(meal.idMeal)">
       <p>{{meal.strMeal}}</p>
     </div>
   }
+  </div>
 </div>

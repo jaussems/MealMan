@@ -46,12 +46,9 @@ navigateToRecipePage(recipeId: string) {
     this._router.navigateByUrl(`home/${recipeId}`)
 }
 
-
 getData() {
     this._dataService.getAllIngredients().subscribe((data: Ingredient) => {
       this.data$ = data;
     })
-
-
 }
 }
