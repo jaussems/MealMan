@@ -15,14 +15,12 @@
       background: #fff;
       border: 1px solid lightblue;
       transition: width 200ms;
+      width: 20rem;
 
       &:focus {
         background: wheat;
-        width: 20rem;
       }
     }
-
-
   }
 
   &__meals {

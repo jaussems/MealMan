@@ -41,6 +41,7 @@ constructor(private _dataService: DataService, private _router: Router) {
 ngOnInit() {
   this.getData();
 
+
 }
 navigateToRecipePage(recipeId: string) {
     this._router.navigateByUrl(`home/${recipeId}`)

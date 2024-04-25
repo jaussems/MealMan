@@ -1,9 +1,8 @@
 <div class="home">
-<h1>Welcome to mealMan</h1>
-  <p>Generate meals based on ingredient:</p>
+<h1>Welcome to MealMan!</h1>
   <form class="home__form" [formGroup]="searchFormGroup" >
-    <label>Input your ingredient</label>
-  <input class="home__form__input" formControlName="search"  />
+    <label>Please enter your ingredient</label>
+  <input class="home__form__input" formControlName="search" placeholder="Please input some ingredients like: Egg, Beef or Broccolli"  />
   </form>
   <div class="home__meals">
   @for(meal of meals$?.meals; track meal.idMeal)
