@@ -1,5 +1,17 @@
 # Mealman
 
+##   feature/build-pages-components &&   feature/generate-dataservice
+
+Took 90 minutes
+
+##   feature/concat-string-and-create-detail-page
+
+Took 30 minutes
+
+## feature/styling-bonus-feature
+
+Took 30 minutes
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
 
 ## Development server
@@ -25,3 +37,5 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
