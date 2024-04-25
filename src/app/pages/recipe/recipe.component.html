@@ -7,7 +7,6 @@
       <p>Area : {{recipe$.meals[0].strArea}}</p>
       <img ngSrc="{{recipe$.meals[0].strMealThumb}}" width="400" height="400" priority />
     </div>
-    {{recipe$.meals[0].strYoutube}}
     @if(recipe$.meals[0].strYoutube)
     {
       <iframe #youtube width="800" height="600" target="_parent"
