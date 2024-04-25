@@ -3,6 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {DataService} from "../../shared/services/data.service";
 import { Meal, } from "../../shared/interfaces/api";
 import {NgOptimizedImage} from "@angular/common";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-recipe',
@@ -15,7 +16,7 @@ import {NgOptimizedImage} from "@angular/common";
 })
 export class RecipeComponent implements  OnInit{
   recipe$: Meal | undefined
-  constructor(private activatedRoute: ActivatedRoute, private _dataService: DataService)  {
+  constructor(private activatedRoute: ActivatedRoute, private _dataService: DataService,  private sanitizer: DomSanitizer)  {
   }
 
   recipeId = this.activatedRoute.snapshot.params['recipeId'];
@@ -29,5 +30,9 @@ export class RecipeComponent implements  OnInit{
       this.recipe$ = value;
       console.log(`this.recipe$ = ${this.recipe$}`);
     })
+  }
+
+  setIFrameLink(youtubeURL: string) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(youtubeURL);
   }
 }
