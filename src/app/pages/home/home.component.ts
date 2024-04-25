@@ -25,8 +25,8 @@ export class HomeComponent implements OnInit{
 constructor(private _dataService: DataService, private _router: Router) {
   this.searchFormGroup.controls['search']?.valueChanges
     .pipe(
-      debounceTime(1000), // Adjust the delay time as needed
-      distinctUntilChanged(), // Only emit if the value has changed
+      debounceTime(1000),
+      distinctUntilChanged(),
       switchMap((value) => {
         console.log(`Input Value: ${value}`);
         let concat = value?.replace(' ', '_').trim().toLowerCase() ?? '';

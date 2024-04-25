@@ -3,16 +3,11 @@
   {
     <div>
       <h1>{{recipe$.meals[0].strMeal}}</h1>
+      <p>Category : {{recipe$.meals[0].strCategory}}</p>
+      <p>Area : {{recipe$.meals[0].strArea}}</p>
       <img ngSrc="{{recipe$.meals[0].strMealThumb}}" width="400" height="400" />
     </div>
-    @if(recipe$.meals[0].strYoutube)
-    {
-      <iframe #youtube width="100%" height="100%" target="_parent"
-              [src]=setIFrameLink
-              frameborder="0" allowfullscreen=""
-      >
-      </iframe>
-    }
     <p class="recipe__instructions">{{recipe$.meals[0].strInstructions}}</p>
+
   }
 </div>
